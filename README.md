@@ -37,5 +37,5 @@ A bola verde começa a cair e o tempo começa a ser cronometrado.
 
 Quando a bola chega no chão, o tempo para de ser contado e dois botões aparecem:
 
--Resetar a simulação;
--Mostar a altura inicial em metros e o a velocidade em metros por segundo.
+-Resetar a simulação
+-Mostar a altura inicial em metros e o a velocidade em metros por segundo
