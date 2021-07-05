@@ -12,14 +12,16 @@ class Game:
         self.ball_sprite = pg.sprite.Group()
         self.buttom_sprite = pg.sprite.Group()
 
-        self.altura = 10000  # <--- Mudar altura da queda aqui
+        self.altura = randint(400, 99999)
 
-        self.regua1 = Obj('assets/regua.png', 0, -64 , self.all_sprites)
+        self.regua1 = Obj('assets/regua.png', 0, -64, self.all_sprites)
         self.regua2 = Obj('assets/regua.png', 0, 464, self.all_sprites)
-        self.grass = Terreno('assets/grassplatform.png', 0, 464 + self.altura, 464, self.all_sprites, self.plat_sprite)
+        self.grass = Terreno('assets/grassplatform.png', 0, 464 +
+                             self.altura, 464, self.all_sprites, self.plat_sprite)
         self.ball = Ball('assets/GreenBall.png', 145, 254, self.ball_sprite)
 
-        self.resetbutttom = Obj('assets/reset.png', 128, 50, self.buttom_sprite)
+        self.resetbutttom = Obj('assets/reset.png', 128,
+                                50, self.buttom_sprite)
         self.showbuttom = Obj('assets/show.png', 128, 100, self.buttom_sprite)
 
         self.tick = 1
@@ -41,14 +43,12 @@ class Game:
         self.show_altura = Texto(str(self.res_altura), 30, 210, 100)
         self.show_vel = Texto(str(self.res_vel), 30, 210, 150)
 
-
     def events(self, event):
         if event.type == pg.MOUSEBUTTONUP:
             if self.resetbutttom.rect.collidepoint(pg.mouse.get_pos()):
                 self.reset = False
             if self.showbuttom.rect.collidepoint(pg.mouse.get_pos()):
                 self.show = True
-
 
     def draw(self, window):
 
@@ -93,7 +93,6 @@ class Game:
         # Velocidade Final
         self.res_vel = 9.81 * round(self.time, 3)
 
-
     def mov_regua(self):
 
         if self.grass.grav:
@@ -110,12 +109,3 @@ class Game:
         else:
             self.regua1.rect[1] = -64
             self.regua2.rect[1] = -64
-
-
-
-
-
-
-
-
-
